@@ -30,10 +30,7 @@ import org.w3c.dom.NodeList;
 public class Wssri {
     private static final String WSDL = "https://cel.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantes?wsdl";
     public static void main(String[] args) {
-        
-        new NewJFrame().setVisible(true);
-        
-        
+       
         String numero = args.length == 0 ? "" : args[0].trim();
         if( numero.equals("") ){
             System.err.println("Numero de autorización no válido....");
