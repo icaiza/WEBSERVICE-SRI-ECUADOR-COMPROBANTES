@@ -34,7 +34,11 @@ public class Wssri {
         new NewJFrame().setVisible(true);
         
         
-        String numero = args.length == 0 ? "0105201701099000419600120010660000081920000819211" : args[0].trim();
+        String numero = args.length == 0 ? "" : args[0].trim();
+        if( numero.equals("") ){
+            System.err.println("Numero de autorización no válido....");
+            return;
+        }
         String params = "<x:Envelope xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ec=\"http://ec.gob.sri.ws.autorizacion\">" +
             "    <x:Header/>" +
             "    <x:Body>" +
@@ -75,10 +79,6 @@ public class Wssri {
                 
                 String xml = responseStrBuilder.toString();
                 
-                
-                
-
-                
                 MessageFactory factory;
                 try {
                     factory = MessageFactory.newInstance();
@@ -98,19 +98,6 @@ public class Wssri {
                 } catch (SOAPException ex) {
                     Logger.getLogger(Wssri.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
-                
-
-
-
-
-    
-                
-                
-                
-                
-                
-                
                 
                 
             }else{
